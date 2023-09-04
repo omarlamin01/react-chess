@@ -1,23 +1,21 @@
+import Square from "./Square";
 
 function ChessBoard() {
     const rows = 8;
     const cols = 8;
 
-    const chessboard = [];
+    const chessboard = Square[rows][cols];
+
+    let index = 0;
 
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
-            const isWhiteSquare = (row + col) % 2 === 0;
-            const squareColor = isWhiteSquare ? "bg-white" : "bg-black";
-
-            chessboard.push(
-                <div
-                    key={`${row}-${col}`}
-                    className={`w-12 h-12 flex items-center justify-center ${squareColor}`}
-                >
-                    {/* You can add chess pieces or other content here */}
-                </div>
-            );
+            let color = "white";
+            if (index % 2 === 0) {
+                color = "black";
+            }
+            chessboard[row][col] = <Square color={color} />;
+            index++;
         }
     }
 
