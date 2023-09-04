@@ -1,10 +1,10 @@
-
+import Piece from "./Piece";
 // A class that represents a square on the board
 const Square = class {
-    const col : number;
-    const row : number;
-    const color : string;
-    let piece : Piece? = null;
+    col : number;
+    row : number;
+    color : string;
+    piece : typeof Piece | null = null;
 
     // @ts-ignore
     constructor(col : number, row : number, color : string) {
@@ -20,7 +20,7 @@ const Square = class {
     };
 
     // Returns the piece on the square
-    getPiece() : Piece? {
+    getPiece() : typeof Piece | null {
         return this.piece;
     };
 }
