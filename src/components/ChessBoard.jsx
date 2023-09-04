@@ -14,7 +14,7 @@ function Chessboard() {
             chessboard.push(
                 <div
                     key={`${row}-${col}`}
-                    className={`w-12 h-12 flex items-center justify-center ${squareColor}`}
+                    className={`w-24 h-24 flex justify-items-center justify-center ${squareColor}`}
                 >
                     {/* You can add chess pieces or other content here */}
                 </div>
@@ -23,8 +23,10 @@ function Chessboard() {
     }
 
     return (
-        <div className="grid grid-cols-8 gap-0">
-            {chessboard}
+        <div id="board-container" className="w-full h-full flex align-center justify-center">
+            <div id="board" className="grid grid-cols-8 gap-0 p-12 bg-amber-300">
+                {chessboard}
+            </div>
         </div>
     );
 }
