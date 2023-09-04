@@ -7,10 +7,11 @@ const Square = class {
     piece : typeof Piece | null = null;
 
     // @ts-ignore
-    constructor(col : number, row : number, color : string) {
+    constructor(col : number, row : number, color : string, piece : typeof Piece | null = null) {
         this.col = col;
         this.row = row;
         this.color = color;
+        this.piece = piece;
     }
 
     // Returns the color of the square
